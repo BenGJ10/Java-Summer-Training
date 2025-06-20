@@ -45,7 +45,7 @@ class MyFrame extends Frame implements ActionListener{
     }
 
     public void actionPerformed(ActionEvent ae){
-        if(ae.getSource() == add){ // want buttons which are clicked
+        if(ae.getSource() == add){ // when the buttons which are clicked
             num1 = Integer.parseInt(t1.getText()); // get value from the text field
             num2 = Integer.parseInt(t2.getText());
 
