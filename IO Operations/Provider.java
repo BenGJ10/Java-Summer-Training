@@ -38,12 +38,13 @@ public class Provider {
                 catch(ClassNotFoundException classNot){
                     System.err.println("Data received in unknown format.");
                 }
-            }while(!message.equals("bye"));
+            }   while(!message.equals("bye"));
         }
         catch(IOException io){
             io.printStackTrace();
         }
         finally{
+            
             // 5. Closing connection
             try{
                 in.close();

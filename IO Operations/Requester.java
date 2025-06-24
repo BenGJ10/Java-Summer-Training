@@ -42,7 +42,7 @@ public class Requester {
             catch(ClassNotFoundException classNot){
                System.err.println("Data received in unknown format.");
             }
-         }while(!message.equals("bye"));
+         }  while(!message.equals("bye"));
       }
       catch(UnknownHostException unknownHost){
          System.err.println("You are trying to connect to an unknown host!");
@@ -51,7 +51,8 @@ public class Requester {
          io.printStackTrace();
       }
       finally{
-            // 5. Closing connection
+            
+         // 5. Closing connection
             try{
                 in.close();
                 out.close();
