@@ -1,22 +1,21 @@
 package Threads;
 
 class Table {
-    synchronized void printTable(int n) { // method not synchronized
+    void printTable(int num) { 
         for (int i = 1; i <= 5; i++) {
-            System.out.println(n * i);
-            try {
+            System.out.println(num * i);
+            try{
                 Thread.sleep(2000);
-            } catch (Exception e) {
+            }catch (Exception e){
                 System.out.println(e);
             }
         }
     }
 }
 
-class Thread1 extends Thread {
+class ThreadX extends Thread {
     Table t;
-
-    Thread1(Table t) {
+    ThreadX(Table t) {
         this.t = t;
     }
 
@@ -25,10 +24,9 @@ class Thread1 extends Thread {
     }
 }
 
-class Thread2 extends Thread {
+class ThreadY extends Thread {
     Table t;
-
-    Thread2(Table t) {
+    ThreadY(Table t) {
         this.t = t;
     }
 
@@ -39,10 +37,10 @@ class Thread2 extends Thread {
 
 public class NonSynchronizedThreads {
     public static void main(String args[]) {
-        Table obj = new Table(); // only one object
+        Table obj = new Table(); 
 
-        Thread1 t1 = new Thread1(obj);
-        Thread2 t2 = new Thread2(obj);
+        ThreadX t1 = new ThreadX(obj);
+        ThreadY t2 = new ThreadY(obj);
         t1.start();
         t2.start();
     }
