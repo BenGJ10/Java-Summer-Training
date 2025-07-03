@@ -1,5 +1,3 @@
-package GUI;
-
 // In Java, an ActionListener is an interface within the java.awt.event package, designed to handle 
 // action events, primarily in GUI applications. It is a key component in event-driven programming, 
 // allowing Java applications to respond to user interactions with GUI elements.
